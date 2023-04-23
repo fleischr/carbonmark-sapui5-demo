@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="{{yourFioriLaunchpad}}sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='SAP__SELF',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zui_c_prvd_eco_demo_0902" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="FlightDataType" sap:label="Provide ECO - SFLIGHT Composite CDS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CarrierID"/>
+                    <PropertyRef Name="ConnectionID"/>
+                    <PropertyRef Name="FlightDate"/>
+                </Key>
+                <Property Name="aggregateCarbon_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="proofOfAtomicOffset_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="retireCarbon_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CarrierID" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline" sap:quickinfo="Airline Code"/>
+                <Property Name="ConnectionID" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number" sap:quickinfo="Flight Connection Number"/>
+                <Property Name="FlightDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Flight Date" sap:quickinfo="Flight date"/>
+                <Property Name="PlaneType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Plane Type" sap:quickinfo="Aircraft Type"/>
+                <Property Name="MaxSeatsEconomy" Type="Edm.Int32" sap:label="Max. Capacity Econ." sap:quickinfo="Maximum Capacity in Economy Class"/>
+                <Property Name="MaxSeatsBusinessClass" Type="Edm.Int32" sap:label="Max. Capacity Bus." sap:quickinfo="Maximum Capacity in Business Class"/>
+                <Property Name="MaxSeatsFirstClass" Type="Edm.Int32" sap:label="Max. Capacity 1st" sap:quickinfo="Maximum Capacity in First Class"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Airline Currency" sap:quickinfo="Local currency of airline" sap:semantics="currency-code"/>
+                <Property Name="OccupiedEconomy" Type="Edm.Int32" sap:label="Occupied econ." sap:quickinfo="Occupied seats in economy class"/>
+                <Property Name="OccupiedBusinessClass" Type="Edm.Int32" sap:label="Occupied bus." sap:quickinfo="Occupied seats in business class"/>
+                <Property Name="OccupiedFirstClass" Type="Edm.Int32" sap:label="Occupied 1st" sap:quickinfo="Occupied seats in first class"/>
+                <Property Name="Sflight_ID" Type="Edm.String" MaxLength="17"/>
+                <NavigationProperty Name="to_AtomicOffset" Relationship="cds_zui_c_prvd_eco_demo_0902.assoc_A40C29EE296F304532A005908A04AA66" FromRole="FromRole_assoc_A40C29EE296F304532A005908A04AA66" ToRole="ToRole_assoc_A40C29EE296F304532A005908A04AA66"/>
+                <NavigationProperty Name="to_CarbonAggregate" Relationship="cds_zui_c_prvd_eco_demo_0902.assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10" FromRole="FromRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10" ToRole="ToRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10"/>
+                <NavigationProperty Name="to_CarbonRetirement" Relationship="cds_zui_c_prvd_eco_demo_0902.assoc_EDBFF4AC50D11A19D5D0C80D18DDC018" FromRole="FromRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018" ToRole="ToRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018"/>
+            </EntityType>
+            <EntityType Name="AtomicOffsetsType" sap:label="Atomic Offset Interface CDS view" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AtomicOffsetId"/>
+                </Key>
+                <Property Name="AtomicOffsetId" Type="Edm.String" Nullable="false" MaxLength="64" sap:label="Atomic Offset ID" sap:quickinfo="Provide ECO - Carbon Atomic Offset ID"/>
+                <Property Name="AggregateId" Type="Edm.String" MaxLength="64" sap:display-format="UpperCase" sap:label="Carbon Aggregate ID"/>
+                <Property Name="ObjectID" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Object" sap:quickinfo="Object number (forecast)"/>
+                <Property Name="ObjectType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Estimate Number"/>
+                <Property Name="RetirementId" Type="Edm.String" MaxLength="64" sap:label="Carbon Retirdment ID" sap:quickinfo="Provide ECO Carbon Retirement ID"/>
+                <Property Name="AtomicOffsetAmount" Type="Edm.Int32" sap:label="Integer" sap:quickinfo="Whole Number with +/- Sign (-2.147.483.648 .. 2.147.483.647)"/>
+                <Property Name="AtomicOffsetUom" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+                <NavigationProperty Name="to_CarbonAggregate" Relationship="cds_zui_c_prvd_eco_demo_0902.assoc_A9E3B7FFE88A52D4D288E1B23A12130F" FromRole="FromRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F" ToRole="ToRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F"/>
+                <NavigationProperty Name="to_CarbonRetirement" Relationship="cds_zui_c_prvd_eco_demo_0902.assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE" FromRole="FromRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE" ToRole="ToRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE"/>
+            </EntityType>
+            <EntityType Name="CarbonAggregateType" sap:label="Provide ECO - Carbon Aggregates Interface view" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AggregateId"/>
+                </Key>
+                <Property Name="AggregateId" Type="Edm.String" Nullable="false" MaxLength="64" sap:display-format="UpperCase" sap:label="Carbon Aggregate ID"/>
+                <Property Name="ObjectID" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Object" sap:quickinfo="Object number (forecast)"/>
+                <Property Name="ObjectType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Estimate Number"/>
+                <Property Name="CarbonAmount" Type="Edm.Decimal" Precision="30" Scale="9" sap:label="Carbon Tonne"/>
+                <Property Name="CarbonUom" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="CarbonRetirementType" sap:label="Provide ECO - Carbon Retirements CDS Interface Veiw" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RetirementId"/>
+                    <PropertyRef Name="NetworkId"/>
+                </Key>
+                <Property Name="RetirementId" Type="Edm.String" Nullable="false" MaxLength="64" sap:label="Carbon Retirdment ID" sap:quickinfo="Provide ECO Carbon Retirement ID"/>
+                <Property Name="NetworkId" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Nchain Network ID" sap:quickinfo="PRVD Nchain Network ID"/>
+                <Property Name="TxnHash" Type="Edm.String" MaxLength="66" sap:label="Txn Hash" sap:quickinfo="PRVD EVM Transaction Hash"/>
+                <Property Name="SourceToken" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Token Abbr" sap:quickinfo="PRVD Nchain - Token Abbreviation"/>
+                <Property Name="PoolToken" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Token Abbr" sap:quickinfo="PRVD Nchain - Token Abbreviation"/>
+                <Property Name="CarbonAmount" Type="Edm.Decimal" Precision="30" Scale="9" sap:label="Carbon Tonne"/>
+                <Property Name="CarbonUom" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="BeneficiaryAddressId" Type="Edm.String" MaxLength="42" sap:label="Smartcontract addr" sap:quickinfo="EVM smart contract address - PRVD stack"/>
+                <Property Name="BeneficiaryStringId" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Character Field with Length 10" sap:heading=""/>
+                <Property Name="RetirementMessageId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Char20" sap:quickinfo="Char 20"/>
+                <Property Name="AtomicOffsetID" Type="Edm.String" MaxLength="64" sap:label="Atomic Offset ID" sap:quickinfo="Provide ECO - Carbon Atomic Offset ID"/>
+                <Property Name="CarbonAggregateID" Type="Edm.String" MaxLength="64" sap:display-format="UpperCase" sap:label="Carbon Aggregate ID"/>
+            </EntityType>
+            <EntityType Name="SAP__Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CurrencyCode"/>
+                </Key>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/>
+            </EntityType>
+            <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitCode"/>
+                </Key>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO Code"/>
+                <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Measurement Unit Txt"/>
+                <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/>
+            </EntityType>
+            <EntityType Name="SAP__DocumentDescription" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Time Stamp"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <NavigationProperty Name="Format" Relationship="cds_zui_c_prvd_eco_demo_0902.to_format" FromRole="FromRole_to_format" ToRole="ToRole_to_format"/>
+                <NavigationProperty Name="TableColumns" Relationship="cds_zui_c_prvd_eco_demo_0902.to_tablecolumns" FromRole="FromRole_to_tablecolumns" ToRole="ToRole_to_tablecolumns"/>
+                <NavigationProperty Name="CoverPage" Relationship="cds_zui_c_prvd_eco_demo_0902.to_coverpage" FromRole="FromRole_to_coverpage" ToRole="ToRole_to_coverpage"/>
+                <NavigationProperty Name="Signature" Relationship="cds_zui_c_prvd_eco_demo_0902.to_signature" FromRole="FromRole_to_signature" ToRole="ToRole_to_signature"/>
+                <NavigationProperty Name="PDFStandard" Relationship="cds_zui_c_prvd_eco_demo_0902.to_pdfstandard" FromRole="FromRole_to_pdfstandard" ToRole="ToRole_to_pdfstandard"/>
+            </EntityType>
+            <EntityType Name="SAP__Format" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="FitToPage" Type="cds_zui_c_prvd_eco_demo_0902.SAP__FitToPage" Nullable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orientation" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PaperSize" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BorderSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MarginSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FontName" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Font Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__PDFStandard" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UsePDFAConformance" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__TableColumns" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Header"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Header" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HorizontalAlignment" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__CoverPage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Title"/>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                </Key>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__Signature" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoSign" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__ValueHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="VALUEHELP"/>
+                </Key>
+                <Property Name="VALUEHELP" Type="Edm.String" Nullable="false"/>
+                <Property Name="FIELD_VALUE" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DESCRIPTION" Type="Edm.String"/>
+            </EntityType>
+            <ComplexType Name="SAP__FitToPage">
+                <Property Name="ErrorRecoveryBehavior" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Error behavior" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MinimumFontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.FlightDataType" Multiplicity="1" Role="FromRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.CarbonAggregateType" Multiplicity="0..1" Role="ToRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10"/>
+            </Association>
+            <Association Name="assoc_EDBFF4AC50D11A19D5D0C80D18DDC018" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.FlightDataType" Multiplicity="1" Role="FromRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.CarbonRetirementType" Multiplicity="*" Role="ToRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018"/>
+            </Association>
+            <Association Name="assoc_A40C29EE296F304532A005908A04AA66" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.FlightDataType" Multiplicity="1" Role="FromRole_assoc_A40C29EE296F304532A005908A04AA66"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.AtomicOffsetsType" Multiplicity="*" Role="ToRole_assoc_A40C29EE296F304532A005908A04AA66"/>
+            </Association>
+            <Association Name="to_format" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_tablecolumns" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_tablecolumns"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__TableColumns" Multiplicity="*" Role="ToRole_to_tablecolumns"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_coverpage" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_coverpage"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__CoverPage" Multiplicity="*" Role="ToRole_to_coverpage"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_signature" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_signature"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__Signature" Multiplicity="1" Role="ToRole_to_signature"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_pdfstandard" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_pdfstandard"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.SAP__PDFStandard" Multiplicity="1" Role="ToRole_to_pdfstandard"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_pdfstandard">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_pdfstandard">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_A9E3B7FFE88A52D4D288E1B23A12130F" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.AtomicOffsetsType" Multiplicity="1" Role="FromRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.CarbonAggregateType" Multiplicity="0..1" Role="ToRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F"/>
+            </Association>
+            <Association Name="assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE" sap:content-version="1">
+                <End Type="cds_zui_c_prvd_eco_demo_0902.AtomicOffsetsType" Multiplicity="1" Role="FromRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE"/>
+                <End Type="cds_zui_c_prvd_eco_demo_0902.CarbonRetirementType" Multiplicity="0..1" Role="ToRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE"/>
+            </Association>
+            <EntityContainer Name="cds_zui_c_prvd_eco_demo_0902_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx pdf">
+                <EntitySet Name="SAP__Currencies" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__Currency" sap:content-version="1"/>
+                <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" sap:content-version="1"/>
+                <EntitySet Name="SAP__FormatSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__PDFStandardSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__PDFStandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__TableColumnsSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__TableColumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__CoverPageSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__CoverPage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__SignatureSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__Signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__ValueHelpSet" EntityType="cds_zui_c_prvd_eco_demo_0902.SAP__ValueHelp" sap:content-version="1"/>
+                <EntitySet Name="FlightData" EntityType="cds_zui_c_prvd_eco_demo_0902.FlightDataType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
+                <EntitySet Name="AtomicOffsets" EntityType="cds_zui_c_prvd_eco_demo_0902.AtomicOffsetsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CarbonAggregate" EntityType="cds_zui_c_prvd_eco_demo_0902.CarbonAggregateType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CarbonRetirement" EntityType="cds_zui_c_prvd_eco_demo_0902.CarbonRetirementType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE" Association="cds_zui_c_prvd_eco_demo_0902.assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="AtomicOffsets" Role="FromRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE"/>
+                    <End EntitySet="CarbonRetirement" Role="ToRole_assoc_C50BBBCDE06D4D0EFCC2279EEE8554CE"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10" Association="cds_zui_c_prvd_eco_demo_0902.assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FlightData" Role="FromRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10"/>
+                    <End EntitySet="CarbonAggregate" Role="ToRole_assoc_2D62EB6F152B8CDCE6D2DBDDA8D11B10"/>
+                </AssociationSet>
+                <AssociationSet Name="to_formatSet" Association="cds_zui_c_prvd_eco_demo_0902.to_format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/>
+                    <End EntitySet="SAP__FormatSet" Role="ToRole_to_format"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A40C29EE296F304532A005908A04AA66" Association="cds_zui_c_prvd_eco_demo_0902.assoc_A40C29EE296F304532A005908A04AA66" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FlightData" Role="FromRole_assoc_A40C29EE296F304532A005908A04AA66"/>
+                    <End EntitySet="AtomicOffsets" Role="ToRole_assoc_A40C29EE296F304532A005908A04AA66"/>
+                </AssociationSet>
+                <AssociationSet Name="to_pdfstandardSet" Association="cds_zui_c_prvd_eco_demo_0902.to_pdfstandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_pdfstandard"/>
+                    <End EntitySet="SAP__PDFStandardSet" Role="ToRole_to_pdfstandard"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A9E3B7FFE88A52D4D288E1B23A12130F" Association="cds_zui_c_prvd_eco_demo_0902.assoc_A9E3B7FFE88A52D4D288E1B23A12130F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="AtomicOffsets" Role="FromRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F"/>
+                    <End EntitySet="CarbonAggregate" Role="ToRole_assoc_A9E3B7FFE88A52D4D288E1B23A12130F"/>
+                </AssociationSet>
+                <AssociationSet Name="to_tablecolumnsSet" Association="cds_zui_c_prvd_eco_demo_0902.to_tablecolumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/>
+                    <End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/>
+                </AssociationSet>
+                <AssociationSet Name="to_signatureSet" Association="cds_zui_c_prvd_eco_demo_0902.to_signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/>
+                    <End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_EDBFF4AC50D11A19D5D0C80D18DDC018" Association="cds_zui_c_prvd_eco_demo_0902.assoc_EDBFF4AC50D11A19D5D0C80D18DDC018" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FlightData" Role="FromRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018"/>
+                    <End EntitySet="CarbonRetirement" Role="ToRole_assoc_EDBFF4AC50D11A19D5D0C80D18DDC018"/>
+                </AssociationSet>
+                <AssociationSet Name="to_coverpageSet" Association="cds_zui_c_prvd_eco_demo_0902.to_coverpage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/>
+                    <End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/>
+                </AssociationSet>
+                <FunctionImport Name="aggregateCarbon" ReturnType="cds_zui_c_prvd_eco_demo_0902.FlightDataType" EntitySet="FlightData" m:HttpMethod="POST" sap:action-for="cds_zui_c_prvd_eco_demo_0902.FlightDataType" sap:applicable-path="aggregateCarbon_ac">
+                    <Parameter Name="CarrierID" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
+                    <Parameter Name="ConnectionID" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
+                    <Parameter Name="FlightDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Flight Date" sap:display-format="Date"/>
+                </FunctionImport>
+                <FunctionImport Name="proofOfAtomicOffset" ReturnType="cds_zui_c_prvd_eco_demo_0902.FlightDataType" EntitySet="FlightData" m:HttpMethod="POST" sap:action-for="cds_zui_c_prvd_eco_demo_0902.FlightDataType" sap:applicable-path="proofOfAtomicOffset_ac">
+                    <Parameter Name="CarrierID" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
+                    <Parameter Name="ConnectionID" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
+                    <Parameter Name="FlightDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Flight Date" sap:display-format="Date"/>
+                </FunctionImport>
+                <FunctionImport Name="retireCarbon" ReturnType="cds_zui_c_prvd_eco_demo_0902.FlightDataType" EntitySet="FlightData" m:HttpMethod="POST" sap:action-for="cds_zui_c_prvd_eco_demo_0902.FlightDataType" sap:applicable-path="retireCarbon_ac">
+                    <Parameter Name="CarrierID" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
+                    <Parameter Name="ConnectionID" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
+                    <Parameter Name="FlightDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Flight Date" sap:display-format="Date"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.cds_zui_c_prvd_eco_demo_0902_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.cds_zui_c_prvd_eco_demo_0902_Entities/FlightData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>aggregateCarbon_ac</PropertyPath>
+                                <PropertyPath>proofOfAtomicOffset_ac</PropertyPath>
+                                <PropertyPath>retireCarbon_ac</PropertyPath>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_AtomicOffset"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_CarbonAggregate"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_CarbonRetirement"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>aggregateCarbon_ac</PropertyPath>
+                                <PropertyPath>proofOfAtomicOffset_ac</PropertyPath>
+                                <PropertyPath>retireCarbon_ac</PropertyPath>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.cds_zui_c_prvd_eco_demo_0902_Entities/AtomicOffsets" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_CarbonAggregate"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_CarbonRetirement"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.cds_zui_c_prvd_eco_demo_0902_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="./$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="SAP__MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.SAP__DocumentDescription">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__MyDocumentDescriptions"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+                <Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.AlternateKeys">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Key">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription/CreatedBy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.Computed"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription/CreatedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.Computed"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__DocumentDescription" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__capabilties.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Format/Orientation"/>
+                                    <PropertyValue Property="AllowedExpressions" String="Multivalue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Format/PaperSize"/>
+                                    <PropertyValue Property="AllowedExpressions" String="Multivalue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__Format/FitToPage/ErrorRecoveryBehavior" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="../../../../SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27ErrorRecoveryBehaviour%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__Format/FontName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__Format/PaperSize" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27PaperSize%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__Format/Orientation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_c_prvd_eco_demo_0902.SAP__TableColumns/HorizontalAlignment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HorizontalAlignment%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <atom:link rel="self" href="{{yourFioriLaunchpad}}sap/opu/odata/sap/ZUI_C_PRVD_ECO_DEMO_0902V2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="{{yourFioriLaunchpad}}sap/opu/odata/sap/ZUI_C_PRVD_ECO_DEMO_0902V2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
