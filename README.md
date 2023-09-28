@@ -1,29 +1,27 @@
-#  Provide ECO SAP Fiori Demo Application - featuring KlimaDAO!
+#  Carbonmark API Integration to SAP - Demo App
 
-Welcome to SAP Fiori app for demoing Provide ECO!
-
-This app uses the RESTful ABAP programming model along with the PRVD stack and proUBC to pioneer the practice of integrating blockchain-based carbon offsets to carbon emissions data in SAP S/4 HANA. 
+This app uses the RESTful ABAP programming model along with the PRVD stack and provide-abap to pioneer the practice of integrating blockchain-based carbon offsets to carbon emissions data in SAP S/4 HANA. 
 
 Use this app to:
 - generate mock carbon emissions on SFLIGHT data in a SAP development sandbox
 - acquire carbon retirements on KlimaDAO (Polygon) via PRVD stack, Provide Payments fiat-crypto bridge
 - generate carbon emissions and atomic offset zero knowledge proofs through PRVD Axiom (e.g. Baseline Protocol)
 
-This app integrates the [KlimaDAO carbon retirement aggregator](https://docs.klimadao.finance/developers/contracts/retirement) from the [Polygon Matic](https://polygon.technology/) mainnet. Learn more about KlimaDAO and the digital carbon market [here](https://docs.klimadao.finance/)
+This app integrates the [ carbon retirement aggregator](https://docs.klimadao.finance/developers/contracts/retirement) from the [Polygon Matic](https://polygon.technology/) mainnet. Learn more about KlimaDAO and the digital carbon market [here](https://docs.klimadao.finance/)
 
-This is repo is for the frontend only. See the ABAP backend component repo and [Provide ECO API documentation](https://docs.provide.services/payments/eco/api) for more information on how the SAP - Blockchain integration is achieved via proUBC and PRVD stack.
+This is repo is for the frontend only. See the ABAP backend component repo and [Provide ECO API documentation](https://docs.provide.services/payments/eco/api) for more information on how the SAP - Blockchain integration is achieved via provide-abap and PRVD stack.
 
-You can run the app front end either as a Node.js app or deployed to a SAP Fiori Launchpad.
+You can run the app front end either as a Node.js app on SAP BTP or deployed to a SAP Fiori Launchpad.
 
 ## Basic Dependencies and Todos
 
 On your SAP system you will need to
-- install and configure [proUBC](https://github.com/provideplatform/proUBC). Clone the proUBC repo through abapGit - use the [proUBC enablement docs](https://docs.provide.services/proubc) for additional details.
+- install and configure [provide-abap](https://github.com/provideplatform/provide-abap). Clone the provide-abap repo through abapGit - use the [provide-abap enablement docs](https://docs.provide.services/provide-abap) for additional details.
 - install and configure SAP backend ECO demo application abapGit repo
 
 Other todos
 - Configure the SFLIGHT carbon emissions and atomic offset zk-workflows in [Provide Shuttle](https://shuttle.provide.services) (Additional instructions forthcoming)
-- Pre-pay USDC to Provide Payments for demo usage (Additional instructions forthing)
+- Pre-pay USDC to Provide Payments for demo usage
 
 ## Application Details
 |               |
